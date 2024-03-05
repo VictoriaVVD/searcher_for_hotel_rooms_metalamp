@@ -1,0 +1,6 @@
+html{font-size:1rem;color:rgb(143, 0, 22);font-family:"Roboto"}
+
+@media (color-gamut: p3){
+html{color:color(display-p3 0.52982 0 0.08599)}
+}.logo1{width:10em}.logo2{width:10em}
+
