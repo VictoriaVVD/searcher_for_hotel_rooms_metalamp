@@ -1,0 +1,6 @@
+mixin field(id, label="", type="Email", status="", text=type)
+    form.w-100(action="##")
+        .label__box
+            label.label(for=id) #{label}
+            label.label #{status}
+        input.input(id=id, type=type, name=type, placeholder=text)

@@ -1,0 +1,18 @@
+@import "./../../../styles/variables";
+
+@mixin icon ($color: $color-light) {
+    color: $color;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%;
+}
+.arrow--primary {
+    @include icon($color-primary);
+}
+.arrow--light {
+    @include icon($color-light);
+}

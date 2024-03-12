@@ -1,0 +1,46 @@
+@import "./../../../styles/variables";
+
+@mixin pb ($pb) {
+    padding-bottom: $pb;
+}
+.pb__title {
+    @include pb(16px);
+}
+form {
+    position: relative;
+}
+.label__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.label {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+.input {
+    padding: 13px;
+    border: 1px solid $font-color25;
+    border-radius: 4px;
+    position: relative;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: $font-color100;
+        border: 1px solid $font-color100;
+
+        &::placeholder {
+            color: $font-color100;
+        }
+    }
+
+    &::placeholder {
+        font-size: 14px;
+        line-height: 18px;
+        color: $font-color25;
+        transition: all .3s ease-in-out;
+    }
+}

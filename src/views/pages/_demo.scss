@@ -1,0 +1,21 @@
+.demo__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.demo__col {
+    max-width: 40%;
+}
+.tbody {
+    display: grid;
+}
+tr {
+    row-gap: 20px;
+}
+th {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+td {
+}

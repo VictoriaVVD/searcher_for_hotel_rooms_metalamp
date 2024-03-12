@@ -1,0 +1,75 @@
+@import "./../../../styles/variables";
+
+@mixin button {
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: none;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    min-width: 99px;
+}
+@mixin btn ($bg, $text-color) {
+    @include button;
+    padding: 14px 20px;
+    background: $bg;
+    color: $text-color;
+    position: relative;
+}
+.btn__link {
+    @include button;
+    color: $color-primary;
+    
+    &:hover {
+        color: $font-color50;
+    }
+    &:active {
+        color: $font-color100;
+    }
+}
+.w-100 {
+    width: 100%;
+    max-width: 320px;
+}
+.btn--colored {
+    @include btn ($btn-primary, $color-light);
+
+    &:hover {
+        opacity: 0.5;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
+.btn--light {
+    @include btn ($color-light, $color-primary);
+
+    &::after {
+        @include button;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 30px;
+        transform: translateX(-50%) translateY(-50%);
+        transition: all 0.3s ease-in-out;
+        width: 104%;
+        height: 112%;
+        content: '';
+        z-index: -2;
+        background-color: $color-primary;
+    }
+
+    &:hover::after {
+        opacity: 0.5;
+    }
+    &:active::after {
+        opacity: 1;
+    }
+}
