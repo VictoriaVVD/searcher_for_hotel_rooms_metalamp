@@ -1,0 +1,48 @@
+block content
+-
+    const colors = [
+        {
+            hex: "#1F2041", 
+            name: "Dark Shade 100%"
+        },
+        {
+            hex: "#1F2041", 
+            name: "Dark Shade 75%"
+        },
+        {
+            hex: "#1F2041", 
+            name: "Dark Shade 50%"
+        },
+        {
+            hex: "#1F2041", 
+            name: "Dark Shade 25%"
+        },
+        {
+            hex: "#1F2041", 
+            name: "Dark Shade 5%"
+        },
+        {
+            hex: "#BC9CFF", 
+            name: "Purple"
+        },
+        {
+            hex: "#6FCF97", 
+            name: "Green"
+        },
+
+    ]
+.demo 
+    .demo__content.row
+        .demo__col.col
+            table.table
+                tbody.tbody
+                    each color in colors 
+                        tr
+                            th(rowspan="2" style=`background: ${color.hex}`)
+                            td= color.name
+                            td= color.hex
+        .demo__col.col
+            h1 This one is the sub-section or widget title
+            h2 Next one is the item title inside widgets
+            h3 This is a label or CTA text
+            Body This is the body text which is used for most of the design, like paragraphs, lists, etc.

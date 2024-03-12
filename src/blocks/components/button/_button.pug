@@ -1,0 +1,4 @@
+mixin btn(title = "Click me", type = "button")
+    form(action="##") 
+        button(type=type, class!=attributes.class)
+            | #{title}
