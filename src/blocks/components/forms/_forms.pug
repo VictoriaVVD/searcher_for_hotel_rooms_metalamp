@@ -1,6 +1,47 @@
-mixin field(id, label="", type="Email", status="", text=type)
-    form.w-100(action="##")
-        .label__box
-            label.label(for=id) #{label}
-            label.label #{status}
-        input.input(id=id, type=type, name=type, placeholder=text)
+
+mixin form__elem(config)
+    //- default values
+    - config.classes__arr = config.classes__arr || {}
+    - config.classes__arr.block__class_mod = config.classes__arr.block__class_mod || ""
+    - config.classes__arr.class_mod = config.classes__arr.class_mod || ""
+    - config.classes__arr.class__elem = config.classes__arr.class__elem || ""
+    - config.class_add = config.class_add || ""
+    - config.placeholder = config.placeholder || ""
+    if !config.id
+        - config.id = config.title
+    else 
+        - config.id = config.id
+    if config.type === "text" || config.type === "password" || config.type === "email" || config.type === "textarea" || config.type === "select" || config.type === "file"
+        form.w-100(action="##")
+            .label__box
+                label.label(for=config.id) #{config.title}
+                label.label(for=config.id) #{config.status}
+            if config.type === "text" || config.type === "password" || config.type === "email"
+                if config.value
+                    input.input(value=config.value type=config.type id=config.id class=`${config.classes__arr.class__elem}${config.class_add}` placeholder=config.placeholder)
+                    block 
+                else
+                    input.input(type=config.type id=config.id class=`${config.classes__arr.class__elem}${config.class_add}` placeholder=config.placeholder)
+                    block 
+            if config.type === 'textarea'
+                textarea.input(type=config.type id=config.id class=`${config.classes__arr.class__elem}${config.class_add}` placeholder=config.placeholder) #{config.value}
+                block 
+            if config.type === 'file'
+                input.input(type=config.type id=config.id class=`${config.classes__arr.class__elem}${config.class_add}` placeholder=config.placeholder)
+                .input
+                    span.input__text #{config.title}
+                    span.input__file Choose File
+            if config.type === 'select'
+                select.input(id=config.id class=`${config.classes__arr.class__elem}${config.class_add}` data-placeholder=config.placeholder)
+                    each option in config.options
+                        option(value=option)= option
+                block
+    if config.type === 'checkbox' || config.type === 'radio'
+        form.w-100(action="##") 
+            label.label(for=config.id) #{config.label}
+            .btns__box.mt-16
+                if config.checked
+                    input.input__btns(name=config.name type=config.type class=`${config.classes__arr.class__elem}${config.class_add}` checked='checked')
+                else 
+                    input.input__btns(name=config.name type=config.type class=`${config.classes__arr.class__elem}${config.class_add}`)
+                span.input__text(class=config.class_mod) #{config.title}
