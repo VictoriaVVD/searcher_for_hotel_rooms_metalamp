@@ -4,7 +4,49 @@ body {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 14px;
+    line-height: 24px;
+    color: $font-color75;
+    position: relative;
 }
 .container {
     margin: 0 auto;
+    padding: 145px 240px;
+}
+a {
+    color: $font-color75;
+}
+
+@mixin h1 () {
+    font-family: "Montserrat";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-align: left;
+    color: rgba(31, 32, 65, 1);
+}
+@mixin h2 () {
+    font-family: "Montserrat";
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: left;
+    color: rgba(31, 32, 65, 1);
+}
+@mixin h3 () {
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 1);
+}
+h1 {
+    @include h1;
+}
+h2 {
+    @include h2;
+}
+h3 {
+    @include h3;
 }

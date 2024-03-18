@@ -10,9 +10,9 @@
     padding: 8px;
     border-radius: 50%;
 }
-.arrow--primary {
+.arrow-primary {
     @include icon($color-primary);
 }
-.arrow--light {
+.arrow-light {
     @include icon($color-light);
 }

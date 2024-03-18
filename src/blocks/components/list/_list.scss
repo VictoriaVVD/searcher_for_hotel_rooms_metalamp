@@ -1,0 +1,28 @@
+@import "./../../../styles/variables";
+
+.list {
+    list-style: none;
+
+    &__item {
+        position: relative;
+    }
+    &-links::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $font-color25;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.item__link {
+    margin-left: 20px;
+    transition: color 0.3s ease-in-out;
+    
+    &:hover {
+        color: $color-primary;
+    }
+}

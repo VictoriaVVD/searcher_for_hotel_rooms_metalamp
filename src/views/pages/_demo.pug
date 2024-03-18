@@ -31,18 +31,35 @@ block content
         },
 
     ]
+-
+    const content__text  = [
+        {
+            title: "h1",
+            text: "This one is the sub-section or widget title",
+        },
+        {
+            title: "h2",
+            text: "Next one is the item title inside widgets",
+        },
+        {
+            title: "h3",
+            text: "This is a label or CTA text",
+        },
+    ]
 .demo 
-    .demo__content.row
-        .demo__col.col
+    .demo__content
+        .demo__col
             table.table
                 tbody.tbody
                     each color in colors 
                         tr
-                            th(rowspan="2" style=`background: ${color.hex}`)
-                            td= color.name
+                            th(style=`background: ${color.hex}`)
+                            td 
+                                h2= color.name
                             td= color.hex
-        .demo__col.col
-            h1 This one is the sub-section or widget title
-            h2 Next one is the item title inside widgets
-            h3 This is a label or CTA text
-            Body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+        .demo__col
+            each item in content__text 
+                #{item.title}.th__opacity= item.title
+                #{item.title}= item.text
+            p.th__opacity Body
+            p This is the body text which is used for most of the design, like paragraphs, lists, etc.

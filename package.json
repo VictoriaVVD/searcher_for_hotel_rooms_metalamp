@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@prettier/plugin-pug": "^3.0.0",
     "css-loader": "^6.10.0",
     "filemanager-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.6.0",
@@ -26,6 +27,7 @@
     "mini-css-extract-plugin": "^2.8.1",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^9.4.0",
+    "prettier": "^3.2.5",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass": "^1.71.1",
@@ -35,5 +37,8 @@
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
   }
 }
