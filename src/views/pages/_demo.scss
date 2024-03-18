@@ -1,0 +1,44 @@
+
+.demo__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.demo__col {
+    max-width: 38.5%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+
+tr {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 38px;
+    margin-bottom: 19px;
+}
+th {
+    grid-row: span 2;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+.th__opacity {
+    color: $font-color25;
+    text-align: right;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+.demo__col h3 {
+    margin-bottom: 12px;
+}
+p.th__opacity {
+    text-transform: capitalize;
+}
+.tr__heading {
+    @include h2;
+}
+

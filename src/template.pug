@@ -1,0 +1,12 @@
+extends ./views/layouts/default.pug
+
+block variables
+    - const title= "Website page"
+
+block content
+    include ./blocks/components/button/_button.pug
+    include ./blocks/components/arrow_icon/_icon.pug
+    include ./blocks/components/forms/_forms.pug
+    include ./blocks/components/list/_list.pug
+    include ./views/pages/_demo.pug
+block scripts

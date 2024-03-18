@@ -1,0 +1,20 @@
+
+mixin list(config, data)
+    - config.classes__arr = config.classes__arr || {}
+    - config.classes__arr.block__class = config.classes__arr.class_mod || ""
+    - config.classes__arr.class__elem = config.classes__arr.class__elem || ""
+    - config.classes__arr.class_mod = config.classes__arr.class_mod || ""
+    - config.class_add = config.class_add || ""
+    - config.href = config.href || ""
+        h3 #{config.title}
+        ul(class=`${config.classes__arr.block__class}`)
+            if config.type === "link"
+                each item in data
+                    li(class=`${config.classes__arr.class__elem} ${config.class_add}`)
+                        a.item__link(href=config.href) #{item.text}
+                    block
+            else
+                each item in data
+                    li(class=`${config.classes__arr.class__elem}`)
+                        +form__elem(form_props)
+                    block
